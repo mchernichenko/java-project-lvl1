@@ -8,8 +8,10 @@
 
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
+    id 'java'
     id 'application'
     id 'com.github.ben-manes.versions' version '0.38.0'
+    id 'checkstyle'
 }
 
 group = 'hexlet.code'
@@ -30,5 +32,11 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'java.hexlet.code.App'
+    mainClass = 'hexlet.code.App'
+}
+
+// Для того чтобы запускать приложение с помощью команды ./gradlew run понадобится задать стандартный поток ввода
+// для процесса выполняющего команду, т.к. используется java.util.Scanner
+run {
+    standardInput = System.in
 }
