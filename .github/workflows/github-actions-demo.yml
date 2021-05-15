@@ -16,5 +16,9 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       # Build
+      - name: Set up openJDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: '15'
       - name: Build with Gradle
         run: make build
