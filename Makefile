@@ -11,5 +11,5 @@ lint:
 	./gradlew checkstyleMain
 
 build:
-	gradle build
+	./gradlew build
 
