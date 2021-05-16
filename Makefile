@@ -5,11 +5,10 @@ run:
 	./app/build/install/app/bin/app
 
 check-updates:
-	gradle dependencyUpdates
+	./gradlew dependencyUpdates
 
 lint:
 	./gradlew checkstyleMain
 
 build:
 	./gradlew build
-
