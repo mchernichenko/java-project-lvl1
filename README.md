@@ -4,4 +4,4 @@
 ![Java CI](https://github.com/mchernichenko/java-project-lvl1/actions/workflows/java-ci.yml/badge.svg)
 
 ## Demo of the project:
-[![asciicast](https://asciinema.org/a/zWOkC5allB7FDkqFUBy78HSv5.svg)](https://asciinema.org/a/zWOkC5allB7FDkqFUBy78HSv5)
+[![asciicast](https://asciinema.org/a/416777.svg)](https://asciinema.org/a/416777)

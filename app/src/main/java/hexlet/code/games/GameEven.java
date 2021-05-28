@@ -1,4 +1,4 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -20,13 +20,14 @@ public class GameEven {
             System.out.println("Question: " + randomVal);
             String correctAnswer = (randomVal % 2 == 0) ? YES : NO;
             System.out.print("Your answer: ");
-            String answer = in.next();
-            if (correctAnswer.equals(answer)) {
+            String userAnswer = in.next();
+            if (correctAnswer.equals(userAnswer)) {
                 System.out.println("Correct!");
                 attempt++;
             } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
-                System.out.println("Let's try again, " + user + "!");
+                String msg = "'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.\n"
+                        + "Let's try again, " + user + "!";
+                System.out.println(msg);
                 win = false;
             }
         } while (attempt < COUNT_RIGHT_ANSWER && win);
