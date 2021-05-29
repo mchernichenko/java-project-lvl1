@@ -2,6 +2,8 @@ package hexlet.code;
 
 import hexlet.code.games.GameCalc;
 import hexlet.code.games.GameEven;
+import hexlet.code.games.GameGCD;
+import hexlet.code.games.GameProgression;
 import java.util.Scanner;
 
 public class App {
@@ -20,6 +22,12 @@ public class App {
             case 3:
                 new Engine(new GameCalc(user)).run();
                 break;
+            case 4:
+                new Engine(new GameGCD(user)).run();
+                break;
+            case 5:
+                new Engine(new GameProgression(user)).run();
+                break;
             case 0:
                 System.out.println("Bye!");
                 break;
@@ -37,8 +45,10 @@ public class App {
                 + "1 - Greet\n"
                 + "2 - Even\n"
                 + "3 - Calc\n"
+                + "4 - GCD\n"
+                + "5 - Progression\n"
                 + "0 - Exit";
-        int[] mainMenuIds = {1, 2, 3, 0};
+        int[] mainMenuIds = {1, 2, 3, 4, 5, 0};
         System.out.println(mainMenu);
         Scanner inChoiceGame = new Scanner(System.in);
         while (true) {

@@ -4,7 +4,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GameCalc extends Game implements IGame {
-    private String correctAnswer;
 
     public GameCalc(String user) {
         super(user);
@@ -20,14 +19,9 @@ public class GameCalc extends Game implements IGame {
         int val2 = new Random().nextInt(MAX_RANDOM_VALUE);
         int operation = new Random().nextInt(2);
         System.out.println("Question: " + val1 + " " + OPERATIONS[operation] + " " + val2);
-        correctAnswer = correctAnswer(val1, val2, operation);
+        String correctAnswer = correctAnswer(val1, val2, operation);
+        setCorrectAnswer(correctAnswer);
         return correctAnswer;
-    }
-    @Override
-    public void printWrongMassage() {
-        String msg = "'" + getUserAnswer() + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.\n"
-                + "Let's try again, " + getUser() + "!";
-        System.out.println(msg);
     }
 
     private String correctAnswer(int val1, int val2, int operation) {
