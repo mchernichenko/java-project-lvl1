@@ -7,16 +7,9 @@ public interface IGame {
     String[] OPERATIONS = {"+", "-", "*"};
 
     void getQuestion();
-
     String doExample(Scanner in);
-
     String getAnswer(Scanner in);
-
-    default void printCorrectMassage() {
-        System.out.println("Correct!");
-    }
-
     void printWrongMassage();
-
+    void printCorrectMassage();
     void printFinishMessage();
 }

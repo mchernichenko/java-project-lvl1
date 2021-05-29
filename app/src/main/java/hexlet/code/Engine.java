@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int COUNT_RIGHT_ANSWER = 3;
-    private IGame game;
+    private final IGame game;
 
     public Engine(IGame game) {
         this.game = game;

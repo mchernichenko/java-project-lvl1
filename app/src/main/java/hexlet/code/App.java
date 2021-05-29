@@ -15,7 +15,7 @@ public class App {
                 System.out.println("No game");
                 break;
             case 2:
-                GameEven.startEvenGame(user);
+                new Engine(new GameEven(user)).run();
                 break;
             case 3:
                 new Engine(new GameCalc(user)).run();
