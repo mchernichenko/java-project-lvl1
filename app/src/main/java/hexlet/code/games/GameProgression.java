@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.Utils;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -15,8 +17,8 @@ public class GameProgression extends Game implements IGame {
         System.out.println("What number is missing in the progression?");
     }
     @Override
-    public String doExample(Scanner in) {
-        int lenSeq = getRandom(CNT_MIN, CNT_MAX + 1); // длина подпоследовательности
+    public String getTask(Scanner in) {
+        int lenSeq = Utils.getRandom(CNT_MIN, CNT_MAX + 1); // длина подпоследовательности
         int step = new Random().nextInt(CNT_MAX) + 1; // шаг арифметической прогрессии (>0)
         int indexStart = new Random().nextInt(CNT_MAX) + 1; // первый элемент подпоследовательности
         int indexHidden = new Random().nextInt(lenSeq) + indexStart; // скрытый элемент подпоследовательности
@@ -35,15 +37,5 @@ public class GameProgression extends Game implements IGame {
         }
         System.out.println("Question: " + sb.toString());
         return correctAnswer;
-    }
-
-    /**
-     * Генерация случайного числа в заданном диапазоне.
-     * @param from минимальное значение случайного числа
-     * @param to  максимальное значение случайного числа (не включая)
-     * @return Возвращает случайное число в диапазоне [from, to)
-     */
-    private static int getRandom(int from, int to) {
-        return new Random().nextInt(from) + (to - from - 1);
     }
 }

@@ -24,10 +24,14 @@ repositories {
 
 dependencies {
     // Use JUnit test framework.
-    testImplementation 'junit:junit:4.13.1'
+//    testImplementation 'junit:junit:4.13.1'
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:30.0-jre'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.0-M1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.8.0-M1'
+    testImplementation 'org.assertj:assertj-core:3.19.0'
+    testImplementation 'com.github.stefanbirkner:system-lambda:1.2.0'
 }
 
 application {
@@ -39,4 +43,8 @@ application {
 // для процесса выполняющего команду, т.к. используется java.util.Scanner
 run {
     standardInput = System.in
+}
+
+test {
+    useJUnitPlatform()
 }

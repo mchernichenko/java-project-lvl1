@@ -15,7 +15,7 @@ public class GameEven extends  Game implements IGame {
         System.out.println("Answer '" + YES + "' if number even otherwise answer '" + NO + "'.");
     }
     @Override
-    public String doExample(Scanner in) {
+    public String getTask(Scanner in) {
         int randomVal = new Random().nextInt(MAX_RANDOM_VALUE);
         System.out.println("Question: " + randomVal);
         String correctAnswer = (randomVal % 2 == 0) ? YES : NO;

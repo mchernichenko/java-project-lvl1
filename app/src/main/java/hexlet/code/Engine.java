@@ -17,7 +17,7 @@ public class Engine {
         Scanner in = new Scanner(System.in);
         game.getQuestion();
         do {
-            String correctAnswer = game.doExample(in);
+            String correctAnswer = game.getTask(in);
             String userAnswer = game.getAnswer(in);
             if (correctAnswer.equals(userAnswer)) {
                 game.printCorrectMassage();

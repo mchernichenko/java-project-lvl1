@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.GameCalc;
 import hexlet.code.games.GameEven;
 import hexlet.code.games.GameGCD;
+import hexlet.code.games.GamePrime;
 import hexlet.code.games.GameProgression;
 import java.util.Scanner;
 
@@ -28,6 +29,9 @@ public class App {
             case 5:
                 new Engine(new GameProgression(user)).run();
                 break;
+            case 6:
+                new Engine(new GamePrime(user)).run();
+                break;
             case 0:
                 System.out.println("Bye!");
                 break;
@@ -47,8 +51,9 @@ public class App {
                 + "3 - Calc\n"
                 + "4 - GCD\n"
                 + "5 - Progression\n"
+                + "6 - Prime\n"
                 + "0 - Exit";
-        int[] mainMenuIds = {1, 2, 3, 4, 5, 0};
+        int[] mainMenuIds = {1, 2, 3, 4, 5, 6, 0};
         System.out.println(mainMenu);
         Scanner inChoiceGame = new Scanner(System.in);
         while (true) {

@@ -7,7 +7,7 @@ public interface IGame {
     String[] OPERATIONS = {"+", "-", "*"};
 
     void getQuestion();
-    String doExample(Scanner in);
+    String getTask(Scanner in);
     String getAnswer(Scanner in);
     void printWrongMassage();
     void printCorrectMassage();

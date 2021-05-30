@@ -14,7 +14,7 @@ public class GameCalc extends Game implements IGame {
         System.out.println("What is the result of the expression?");
     }
     @Override
-    public String doExample(Scanner in) {
+    public String getTask(Scanner in) {
         int val1 = new Random().nextInt(MAX_RANDOM_VALUE);
         int val2 = new Random().nextInt(MAX_RANDOM_VALUE);
         int operation = new Random().nextInt(2);
