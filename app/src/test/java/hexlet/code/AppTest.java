@@ -5,16 +5,10 @@ package hexlet.code;
 
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class AppTest {
-    @Test public void testAppHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull("app should have a greeting", "Welcome to the Brain Games!");
-    }
-
+class AppTest {
     @Test
-    public void testIsPrime() {
+    void testIsPrime() {
         assertThat(Utils.isPrime(-1)).isFalse();
         assertThat(Utils.isPrime(0)).isFalse();
         assertThat(Utils.isPrime(1)).isFalse();
@@ -25,7 +19,6 @@ public class AppTest {
         assertThat(Utils.isPrime(109)).isTrue();
         assertThat(Utils.isPrime(110)).isFalse();
     }
-
     @Test
     void testGCD() {
         int result1 = Utils.gcd(1, 33);
@@ -47,14 +40,14 @@ public class AppTest {
         assertThat(result6).isEqualTo(3);
     }
     @Test
-    public void testIsInArray() {
+    void testIsInArray() {
         int[] arr = {1, 2, 3, 4, 5, 6};
-        assertThat(Utils.isInArray(1,arr)).isTrue();
-        assertThat(Utils.isInArray(2,arr)).isTrue();
-        assertThat(Utils.isInArray(4,arr)).isTrue();
-        assertThat(Utils.isInArray(6,arr)).isTrue();
-        assertThat(Utils.isInArray(-1,arr)).isFalse();
-        assertThat(Utils.isInArray(0,arr)).isFalse();
-        assertThat(Utils.isInArray(7,arr)).isFalse();
+        assertThat(Utils.isInArray(1, arr)).isTrue();
+        assertThat(Utils.isInArray(2, arr)).isTrue();
+        assertThat(Utils.isInArray(4, arr)).isTrue();
+        assertThat(Utils.isInArray(6, arr)).isTrue();
+        assertThat(Utils.isInArray(-1, arr)).isFalse();
+        assertThat(Utils.isInArray(0, arr)).isFalse();
+        assertThat(Utils.isInArray(7, arr)).isFalse();
     }
 }

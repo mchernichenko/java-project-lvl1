@@ -1,8 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Utils;
-import jdk.jshell.EvalException;
-
 import java.util.Random;
 import java.util.Scanner;
 
@@ -20,7 +18,7 @@ public class GamePrime extends Game implements IGame {
     @Override
     public String getTask(Scanner in) {
         int val = new Random().nextInt(MAX_RANDOM_VALUE);
-        String correctAnswer = Utils.isPrime(val) + "";
+        String correctAnswer = Utils.isPrime(val) ? YES : NO;
         setCorrectAnswer(correctAnswer);
         System.out.println("Question: " + val);
         return correctAnswer;
