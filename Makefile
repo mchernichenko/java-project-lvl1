@@ -1,6 +1,9 @@
 install:
 	./gradlew clean install
 
+test:
+	./gradlew test
+
 run:
 	./app/build/install/app/bin/app
 
