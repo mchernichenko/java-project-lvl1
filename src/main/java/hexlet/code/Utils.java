@@ -32,7 +32,7 @@ public class Utils {
         if (value <= 1 || value != 2 && value % 2 == 0) {
             isPrime = false;
         } else {
-            for (int i = 3; i * i < value; i += 2) {
+            for (int i = 3; i * i <= value; i += 2) {
                 if (value % i == 0) {
                     isPrime = false;
                     break;

@@ -18,6 +18,9 @@ class AppTest {
         assertThat(Utils.isPrime(5)).isTrue();
         assertThat(Utils.isPrime(109)).isTrue();
         assertThat(Utils.isPrime(110)).isFalse();
+        assertThat(Utils.isPrime(56)).isFalse();
+        assertThat(Utils.isPrime(30)).isFalse();
+        assertThat(Utils.isPrime(49)).isFalse();
     }
     @Test
     void testGCD() {
