@@ -4,7 +4,7 @@ install:
 test:
 	./gradlew test
 
-run:
+run-dist:
 	./app/build/install/app/bin/app
 
 check-updates:
