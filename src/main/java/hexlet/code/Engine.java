@@ -11,6 +11,9 @@ public class Engine {
         this.game = choiceGame;
     }
 
+    /**
+     * Общий алгоритм выполнение игр.
+     */
     public void run() {
         int attempt = 0;
         boolean win = true;
