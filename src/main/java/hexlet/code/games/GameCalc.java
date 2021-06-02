@@ -3,7 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
-public class GameCalc extends Game implements IGame {
+public final class GameCalc extends Game implements IGame {
 
     public GameCalc(String user) {
         super(user);

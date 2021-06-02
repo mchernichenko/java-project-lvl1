@@ -7,8 +7,8 @@ public class Engine {
     public static final int COUNT_RIGHT_ANSWER = 3;
     private final IGame game;
 
-    public Engine(IGame game) {
-        this.game = game;
+    public Engine(IGame choiceGame) {
+        this.game = choiceGame;
     }
 
     public void run() {

@@ -28,11 +28,12 @@ public class Utils {
      */
     public static boolean isPrime(int value) {
         boolean isPrime = true;
+        final int init = 3;
 
         if (value <= 1 || value != 2 && value % 2 == 0) {
             isPrime = false;
         } else {
-            for (int i = 3; i * i <= value; i += 2) {
+            for (int i = init; i * i <= value; i += 2) {
                 if (value % i == 0) {
                     isPrime = false;
                     break;

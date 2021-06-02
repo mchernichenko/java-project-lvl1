@@ -8,31 +8,39 @@ import hexlet.code.games.GameProgression;
 import java.util.Scanner;
 
 public class App {
+    public static final int GREET = 1;
+    public static final int EVEN = 2;
+    public static final int CALC = 3;
+    public static final int GCD = 4;
+    public static final int PROGRESSION = 5;
+    public static final int PRIME = 6;
+    public static final int EXIT = 0;
+    private static final int[] MAIN_MENU_IDS = {1, 2, 3, 4, 5, 6, 0};
 
     public static void main(String[] args) {
         int choiceItem = choiceGame();
         String user = Cli.getPlayerName();
 
         switch (choiceItem) {
-            case 1:
+            case GREET:
                 System.out.println("No game");
                 break;
-            case 2:
+            case EVEN:
                 new Engine(new GameEven(user)).run();
                 break;
-            case 3:
+            case CALC:
                 new Engine(new GameCalc(user)).run();
                 break;
-            case 4:
+            case GCD:
                 new Engine(new GameGCD(user)).run();
                 break;
-            case 5:
+            case PROGRESSION:
                 new Engine(new GameProgression(user)).run();
                 break;
-            case 6:
+            case PRIME:
                 new Engine(new GamePrime(user)).run();
                 break;
-            case 0:
+            case EXIT:
                 System.out.println("Bye!");
                 break;
             default:
@@ -53,13 +61,12 @@ public class App {
                 + "5 - Progression\n"
                 + "6 - Prime\n"
                 + "0 - Exit";
-        int[] mainMenuIds = {1, 2, 3, 4, 5, 6, 0};
         System.out.println(mainMenu);
         Scanner inChoiceGame = new Scanner(System.in);
         while (true) {
             System.out.print("Your choice: ");
             choiceItem = inChoiceGame.nextInt();
-            if (Utils.isInArray(choiceItem, mainMenuIds)) {
+            if (Utils.isInArray(choiceItem, MAIN_MENU_IDS)) {
                 System.out.println("Welcome to the Brain Games!");
                 break;
             }

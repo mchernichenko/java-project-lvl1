@@ -5,7 +5,7 @@ import hexlet.code.Utils;
 import java.util.Random;
 import java.util.Scanner;
 
-public class GameProgression extends Game implements IGame {
+public final class GameProgression extends Game implements IGame {
     private static final int CNT_MIN = 5; // минимальная длина прогрессии
     private static final int CNT_MAX = 10; // максимальная длина прогрессии
 

@@ -3,7 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
-public class GameEven extends  Game implements IGame {
+public final class GameEven extends  Game implements IGame {
     private static final String NO = "no";
     private static final String YES = "yes";
 

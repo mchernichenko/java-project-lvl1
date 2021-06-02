@@ -4,7 +4,7 @@ import hexlet.code.Utils;
 import java.util.Random;
 import java.util.Scanner;
 
-public class GameGCD extends Game implements IGame {
+public final class GameGCD extends Game implements IGame {
 
     public GameGCD(String user) {
         super(user);

@@ -4,7 +4,7 @@ import hexlet.code.Utils;
 import java.util.Random;
 import java.util.Scanner;
 
-public class GamePrime extends Game implements IGame {
+public final class GamePrime extends Game implements IGame {
     private static final String NO = "no";
     private static final String YES = "yes";
 
