@@ -35,7 +35,7 @@ public class GameProgression extends Game implements IGame {
             }
             seqNext += step;
         }
-        System.out.println("Question: " + sb.toString());
+        System.out.println("Question:" + sb.toString());
         return correctAnswer;
     }
 }
