@@ -23,9 +23,9 @@ class AppTest {
         final int expected = 49;
         assertThat(GamePrime.isPrime(expected)).isFalse();
     }
- /*    @Test
+    @Test
     void testGCD() {
-        int result1 = GameGCD.gcd(1, 33);
+       /* int result1 = GameGCD.gcd(1, 33);
         assertThat(result1).isEqualTo(1);
 
         int result2 = GameGCD.gcd(5, 7);
@@ -38,20 +38,23 @@ class AppTest {
         assertThat(result4).isEqualTo(3);
 
         int result5 = GameGCD.gcd(4, 0);
-        assertThat(result5).isEqualTo(4);
+        assertThat(result5).isEqualTo(4);*/
 
-        int result6 = GameGCD.gcd(6, 9);
-        assertThat(result6).isEqualTo(3);
+        final int expected = 3;
+        final int param1 = 6;
+        final int param2 = 9;
+        int actual = GameGCD.gcd(param1, param2);
+        assertThat(actual).isEqualTo(expected);
     }
-    @Test
+  /*  @Test
     void testIsInArray() {
         int[] arr = {1, 2, 3, 4, 5, 6};
-        assertThat(Utils.isInArray(1, arr)).isTrue();
-        assertThat(Utils.isInArray(2, arr)).isTrue();
-        assertThat(Utils.isInArray(4, arr)).isTrue();
-        assertThat(Utils.isInArray(6, arr)).isTrue();
-        assertThat(Utils.isInArray(-1, arr)).isFalse();
-        assertThat(Utils.isInArray(0, arr)).isFalse();
-        assertThat(Utils.isInArray(7, arr)).isFalse();
+        assertThat(Util.isInArray(1, arr)).isTrue();
+        assertThat(Util.isInArray(2, arr)).isTrue();
+        assertThat(Util.isInArray(4, arr)).isTrue();
+        assertThat(Util.isInArray(6, arr)).isTrue();
+        assertThat(Util.isInArray(-1, arr)).isFalse();
+        assertThat(Util.isInArray(0, arr)).isFalse();
+        assertThat(Util.isInArray(7, arr)).isFalse();
     }*/
 }
