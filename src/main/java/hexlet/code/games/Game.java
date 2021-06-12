@@ -3,6 +3,9 @@ package hexlet.code.games;
 import java.util.Scanner;
 
 public abstract class Game implements IGame {
+    protected static final int MAX_RANDOM_VALUE = 100;
+    protected static final String NO = "no";
+    protected static final String YES = "yes";
     private final String user;
     private String userAnswer;
     private String correctAnswer;
@@ -13,28 +16,12 @@ public abstract class Game implements IGame {
 
     /**
      *
-     * @return - пользователь игры
-     */
-    public String getUser() {
-        return user;
-    }
-
-    /**
-     *
-     * @return - Ответ пользователя
-     */
-    public String getUserAnswer() {
-        return userAnswer;
-    }
-
-    /**
-     *
      * @return - правильный ответ
      */
+    @Override
     public String getCorrectAnswer() {
         return correctAnswer;
     }
-
     /**
      *
      * @param inCorrectAnswer - сохранить правильный ответ пользователя
@@ -57,25 +44,24 @@ public abstract class Game implements IGame {
      *
      */
     @Override
-    public void printFinishMessage() {
-        System.out.println("Congratulations, " + user + "!");
+    public String getFinishMessage() {
+        return "Congratulations, %s!".formatted(user);
     }
 
     /**
      *
      */
     @Override
-    public void printCorrectMassage() {
-        System.out.println("Correct!");
+    public String getCorrectMassage() {
+        return "Correct!";
     }
 
     /**
      *
      */
     @Override
-    public void printWrongMassage() {
-        String msg = "'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.\n"
-                + "Let's try again, " + user + "!";
-        System.out.println(msg);
+    public String getWrongMassage() {
+        String str = "'%s' is wrong answer ;(. Correct answer was '%s'.\nLet's try again, %s!";
+        return str.formatted(userAnswer, correctAnswer, user);
     }
 }

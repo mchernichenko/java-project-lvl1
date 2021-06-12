@@ -18,21 +18,22 @@ public class Engine {
         int attempt = 0;
         boolean win = true;
         Scanner in = new Scanner(System.in);
-        game.getQuestion();
+        System.out.println(game.getQuestion());
         do {
-            String correctAnswer = game.getTask(in);
+            System.out.println(game.getTask());
+            String correctAnswer = game.getCorrectAnswer();
             String userAnswer = game.getAnswer(in);
             if (correctAnswer.equals(userAnswer)) {
-                game.printCorrectMassage();
+                System.out.println(game.getCorrectMassage());
                 attempt++;
             } else {
-                game.printWrongMassage();
+                System.out.println(game.getWrongMassage());
                 win = false;
             }
         } while (attempt < COUNT_RIGHT_ANSWER && win);
 
         if (win) {
-            game.printFinishMessage();
+            System.out.println(game.getFinishMessage());
         }
     }
 }

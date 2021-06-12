@@ -1,26 +1,43 @@
 package hexlet.code.games;
 
-import hexlet.code.Utils;
 import java.util.Random;
-import java.util.Scanner;
 
 public final class GamePrime extends Game implements IGame {
-    private static final String NO = "no";
-    private static final String YES = "yes";
 
     public GamePrime(String user) {
         super(user);
     }
     @Override
-    public void getQuestion() {
-        System.out.println("Answer '" + YES + "' if given number is prime. Otherwise answer '" + NO + "'.");
+    public String getQuestion() {
+        return "Answer '%s' if given number is prime. Otherwise answer '%s'.".formatted(YES, NO);
     }
     @Override
-    public String getTask(Scanner in) {
+    public String getTask() {
         int val = new Random().nextInt(MAX_RANDOM_VALUE);
-        String correctAnswer = Utils.isPrime(val) ? YES : NO;
+        String correctAnswer = isPrime(val) ? YES : NO;
         setCorrectAnswer(correctAnswer);
-        System.out.println("Question: " + val);
-        return correctAnswer;
+        return "Question: " + val;
+    }
+
+    /**
+     * Проверка, что число простое.
+     * @param value
+     * @return Возвращает true, если value простое, иначе false
+     */
+    public static boolean isPrime(int value) {
+        boolean isPrime = true;
+        final int init = 3;
+
+        if (value <= 1 || value != 2 && value % 2 == 0) {
+            isPrime = false;
+        } else {
+            for (int i = init; i * i <= value; i += 2) {
+                if (value % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+        return isPrime;
     }
 }

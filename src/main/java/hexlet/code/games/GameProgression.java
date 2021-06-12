@@ -1,9 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.Utils;
-
 import java.util.Random;
-import java.util.Scanner;
 
 public final class GameProgression extends Game implements IGame {
     private static final int CNT_MIN = 5; // минимальная длина прогрессии
@@ -13,12 +10,12 @@ public final class GameProgression extends Game implements IGame {
         super(user);
     }
     @Override
-    public void getQuestion() {
-        System.out.println("What number is missing in the progression?");
+    public String getQuestion() {
+        return "What number is missing in the progression?";
     }
     @Override
-    public String getTask(Scanner in) {
-        int lenSeq = Utils.getRandom(CNT_MIN, CNT_MAX + 1); // длина подпоследовательности
+    public String getTask() {
+        int lenSeq = new Random().nextInt(CNT_MIN) + (CNT_MAX - CNT_MIN); // длина подпоследовательности
         int step = new Random().nextInt(CNT_MAX) + 1; // шаг арифметической прогрессии (>0)
         int indexStart = new Random().nextInt(CNT_MAX) + 1; // первый элемент подпоследовательности
         int indexHidden = new Random().nextInt(lenSeq) + indexStart; // скрытый элемент подпоследовательности
@@ -35,7 +32,6 @@ public final class GameProgression extends Game implements IGame {
             }
             seqNext += step;
         }
-        System.out.println("Question:" + sb.toString());
-        return correctAnswer;
+        return "Question:" + sb.toString();
     }
 }

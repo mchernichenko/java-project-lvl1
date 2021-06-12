@@ -22,38 +22,38 @@ public class App {
         String user = Cli.getPlayerName();
 
         switch (choiceItem) {
-            case GREET:
-                System.out.println("No game");
-                break;
-            case EVEN:
-                new Engine(new GameEven(user)).run();
-                break;
-            case CALC:
-                new Engine(new GameCalc(user)).run();
-                break;
-            case GCD:
-                new Engine(new GameGCD(user)).run();
-                break;
-            case PROGRESSION:
-                new Engine(new GameProgression(user)).run();
-                break;
-            case PRIME:
-                new Engine(new GamePrime(user)).run();
-                break;
-            case EXIT:
-                System.out.println("Bye!");
-                break;
-            default:
-                break;
+            case GREET -> System.out.println("No game");
+            case EVEN -> new Engine(new GameEven(user)).run();
+            case CALC -> new Engine(new GameCalc(user)).run();
+            case GCD -> new Engine(new GameGCD(user)).run();
+            case PROGRESSION -> new Engine(new GameProgression(user)).run();
+            case PRIME -> new Engine(new GamePrime(user)).run();
+            case EXIT -> System.out.println("Bye!");
+            default -> throw new Error("Unknown choiceItem " + choiceItem);
         }
     }
     /**
      * Выбор игры.
-     * @return - возвращает идентификатор выбранного меню
+     * @return - возвращает идентификатор выбранной игры
      */
     private static int choiceGame() {
         int choiceItem;
-        String mainMenu = "Please enter the game number and press Enter.\n"
+        System.out.println(getMenu());
+        Scanner inChoiceGame = new Scanner(System.in);
+        while (true) {
+            System.out.print("Your choice: ");
+            choiceItem = inChoiceGame.nextInt();
+            if (Util.isInArray(choiceItem, MAIN_MENU_IDS)) {
+                System.out.println("Welcome to the Brain Games!");
+                break;
+            }
+            System.out.println("Wrong number. Try again!");
+        }
+        return choiceItem;
+    }
+
+    private static String getMenu() {
+        return "Please enter the game number and press Enter.\n"
                 + "1 - Greet\n"
                 + "2 - Even\n"
                 + "3 - Calc\n"
@@ -61,17 +61,5 @@ public class App {
                 + "5 - Progression\n"
                 + "6 - Prime\n"
                 + "0 - Exit";
-        System.out.println(mainMenu);
-        Scanner inChoiceGame = new Scanner(System.in);
-        while (true) {
-            System.out.print("Your choice: ");
-            choiceItem = inChoiceGame.nextInt();
-            if (Utils.isInArray(choiceItem, MAIN_MENU_IDS)) {
-                System.out.println("Welcome to the Brain Games!");
-                break;
-            }
-            System.out.println("Wrong number. Try again!");
-        }
-        return choiceItem;
     }
 }
