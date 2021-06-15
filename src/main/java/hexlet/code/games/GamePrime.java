@@ -4,9 +4,6 @@ import java.util.Random;
 
 public final class GamePrime extends Game implements IGame {
 
-    public GamePrime(String user) {
-        super(user);
-    }
     @Override
     public String getQuestion() {
         return "Answer '%s' if given number is prime. Otherwise answer '%s'.".formatted(YES, NO);

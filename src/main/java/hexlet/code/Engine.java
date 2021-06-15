@@ -6,9 +6,11 @@ import java.util.Scanner;
 public class Engine {
     public static final int COUNT_RIGHT_ANSWER = 3;
     private final IGame game;
+    private final String user;
 
-    public Engine(IGame choiceGame) {
+    public Engine(IGame choiceGame, String pUser) {
         this.game = choiceGame;
+        this.user = pUser;
     }
 
     /**
@@ -22,18 +24,19 @@ public class Engine {
         do {
             System.out.println(game.getTask());
             String correctAnswer = game.getCorrectAnswer();
-            String userAnswer = game.getAnswer(in);
+            System.out.print("Your answer: ");
+            String userAnswer = in.next();
             if (correctAnswer.equals(userAnswer)) {
                 System.out.println(game.getCorrectMassage());
                 attempt++;
             } else {
-                System.out.println(game.getWrongMassage());
+                System.out.printf(game.getWrongMassage() + "%n", userAnswer, correctAnswer, this.user);
                 win = false;
             }
         } while (attempt < COUNT_RIGHT_ANSWER && win);
 
         if (win) {
-            System.out.println(game.getFinishMessage());
+            System.out.printf(game.getFinishMessage() + "%n", this.user);
         }
     }
 }

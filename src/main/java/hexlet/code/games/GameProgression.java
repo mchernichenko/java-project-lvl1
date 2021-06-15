@@ -6,9 +6,6 @@ public final class GameProgression extends Game implements IGame {
     private static final int CNT_MIN = 5; // минимальная длина прогрессии
     private static final int CNT_MAX = 10; // максимальная длина прогрессии
 
-    public GameProgression(String user) {
-        super(user);
-    }
     @Override
     public String getQuestion() {
         return "What number is missing in the progression?";

@@ -4,9 +4,6 @@ import java.util.Random;
 
 public final class GameCalc extends Game implements IGame {
     private static final String[] OPERATIONS = {"+", "-", "*"};
-    public GameCalc(String user) {
-        super(user);
-    }
 
     @Override
     public String getQuestion() {

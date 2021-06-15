@@ -4,9 +4,6 @@ import java.util.Random;
 
 public final class GameGCD extends Game implements IGame {
 
-    public GameGCD(String user) {
-        super(user);
-    }
     @Override
     public String getQuestion() {
         return "Find the greatest common divisor of given numbers.";
