@@ -23,7 +23,6 @@ public class App {
     }
     /**
      * Выбор игры.
-     * @return - возвращает идентификатор выбранной игры
      */
     private static void choiceGame() {
         int choiceItem;
