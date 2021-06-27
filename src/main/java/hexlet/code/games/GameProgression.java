@@ -29,6 +29,6 @@ public final class GameProgression extends Game implements IGame {
             }
             seqNext += step;
         }
-        return sb.toString();
+        return sb.delete(0, 1).toString();
     }
 }
