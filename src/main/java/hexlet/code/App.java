@@ -19,37 +19,30 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(getMenu());
-        int choiceItem = choiceGame();
-        String user = Cli.getPlayerName();
-
-        switch (choiceItem) {
-            case GREET -> System.out.println("No game");
-            case EVEN -> new Engine(new GameEven(), user).run();
-            case CALC -> new Engine(new GameCalc(), user).run();
-            case GCD -> new Engine(new GameGCD(), user).run();
-            case PROGRESSION -> new Engine(new GameProgression(), user).run();
-            case PRIME -> new Engine(new GamePrime(), user).run();
-            case EXIT -> System.out.println("Bye!");
-            default -> throw new Error("Unknown choiceItem " + choiceItem);
-        }
+        choiceGame();
     }
     /**
      * Выбор игры.
      * @return - возвращает идентификатор выбранной игры
      */
-    private static int choiceGame() {
+    private static void choiceGame() {
         int choiceItem;
         Scanner inChoiceGame = new Scanner(System.in);
-        while (true) {
-            System.out.print("Your choice: ");
-            choiceItem = inChoiceGame.nextInt();
-            if (Util.isInArray(choiceItem, MAIN_MENU_IDS)) {
-                System.out.println("Welcome to the Brain Games!");
-                break;
+        System.out.print("Your choice: ");
+        choiceItem = inChoiceGame.nextInt();
+        switch (choiceItem) {
+            case GREET -> Cli.getPlayerName();
+            case EVEN -> new Engine(new GameEven()).run();
+            case CALC -> new Engine(new GameCalc()).run();
+            case GCD -> new Engine(new GameGCD()).run();
+            case PROGRESSION -> new Engine(new GameProgression()).run();
+            case PRIME -> new Engine(new GamePrime()).run();
+            case EXIT -> System.out.println("Bye!");
+            default -> {
+                System.out.println("Wrong number. Try again!");
+                choiceGame();
             }
-            System.out.println("Wrong number. Try again!");
         }
-        return choiceItem;
     }
 
     private static String getMenu() {

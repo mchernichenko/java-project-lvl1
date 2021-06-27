@@ -13,7 +13,7 @@ public final class GamePrime extends Game implements IGame {
         int val = new Random().nextInt(MAX_RANDOM_VALUE);
         String correctAnswer = isPrime(val) ? YES : NO;
         setCorrectAnswer(correctAnswer);
-        return "Question: " + val;
+        return "" + val;
     }
 
     /**
@@ -22,19 +22,16 @@ public final class GamePrime extends Game implements IGame {
      * @return Возвращает true, если value простое, иначе false
      */
     public static boolean isPrime(int value) {
-        boolean isPrime = true;
         final int init = 3;
 
         if (value <= 1 || value != 2 && value % 2 == 0) {
-            isPrime = false;
-        } else {
-            for (int i = init; i * i <= value; i += 2) {
-                if (value % i == 0) {
-                    isPrime = false;
-                    break;
-                }
+            return false;
+        }
+        for (int i = init; i * i <= value; i += 2) {
+            if (value % i == 0) {
+                return false;
             }
         }
-        return isPrime;
+        return true;
     }
 }

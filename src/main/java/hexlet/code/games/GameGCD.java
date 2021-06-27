@@ -12,9 +12,9 @@ public final class GameGCD extends Game implements IGame {
     public String getTask() {
         int val1 = new Random().nextInt(MAX_RANDOM_VALUE);
         int val2 = new Random().nextInt(MAX_RANDOM_VALUE);
-        String correctAnswer = gcd(val1, val2) + "";
+        String correctAnswer = Integer.toString(gcd(val1, val2));
         setCorrectAnswer(correctAnswer);
-        return "Question: " + val1 + " " + val2;
+        return val1 + " " + val2;
     }
 
     /**
@@ -24,9 +24,6 @@ public final class GameGCD extends Game implements IGame {
      * @return Наибольший общий делитель 'a' и 'b'
      */
     public static int gcd(int a, int b) {
-        if (a == 0) {
-            return b;
-        }
         if (b == 0) {
             return a;
         }

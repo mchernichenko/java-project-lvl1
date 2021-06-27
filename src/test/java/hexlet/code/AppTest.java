@@ -46,15 +46,4 @@ class AppTest {
         int actual = GameGCD.gcd(param1, param2);
         assertThat(actual).isEqualTo(expected);
     }
-  /*  @Test
-    void testIsInArray() {
-        int[] arr = {1, 2, 3, 4, 5, 6};
-        assertThat(Util.isInArray(1, arr)).isTrue();
-        assertThat(Util.isInArray(2, arr)).isTrue();
-        assertThat(Util.isInArray(4, arr)).isTrue();
-        assertThat(Util.isInArray(6, arr)).isTrue();
-        assertThat(Util.isInArray(-1, arr)).isFalse();
-        assertThat(Util.isInArray(0, arr)).isFalse();
-        assertThat(Util.isInArray(7, arr)).isFalse();
-    }*/
 }

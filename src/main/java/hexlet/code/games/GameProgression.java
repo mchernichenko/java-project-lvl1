@@ -29,6 +29,6 @@ public final class GameProgression extends Game implements IGame {
             }
             seqNext += step;
         }
-        return "Question:" + sb.toString();
+        return sb.toString();
     }
 }

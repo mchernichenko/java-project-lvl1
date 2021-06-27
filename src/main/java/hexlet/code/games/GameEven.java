@@ -13,6 +13,6 @@ public final class GameEven extends  Game implements IGame {
         int randomVal = new Random().nextInt(MAX_RANDOM_VALUE);
         String correctAnswer = (randomVal % 2 == 0) ? YES : NO;
         setCorrectAnswer(correctAnswer);
-        return "Question: " + randomVal;
+        return "" + randomVal;
     }
 }

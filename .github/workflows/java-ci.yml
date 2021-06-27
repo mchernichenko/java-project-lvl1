@@ -19,4 +19,4 @@ jobs:
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
       - name: Install with Gradle
-        run: make install
+        run: make build
